@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Emergyanos Felices</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.2/css/bulma.min.css">
+  <link rel="stylesheet" href="resources/assets/scss/main.css">
+  <script type="text/javascript" src="challenges.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <section class="hero is-emergya is-fullheight" id="hero">
+      <div class="hero-body">
+        <div class="container has-text-centered">
+          <div class="columns">
+            <div class="column">
+              <div class="box">
+                <div class="columns is-gapless is-multiline">
+                  <div class="column task is-11 has-text-left">
+                    <h1 class="title">Tarea de hoy! <span id="date"></span></h1>
+                  </div>
+                  <div class="column">
+                    <figure class="image">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="136" height="136" viewBox="0 0 136 136">
+                        <g class="logo" fill="none" fill-rule="evenodd">
+                          <path stroke="#FFF" stroke-width="4" d="M133.64 67.913c0 36.371-29.455 65.856-65.791 65.856S2.056 104.284 2.056 67.913c0-36.372 29.457-65.856 65.793-65.856 36.336 0 65.792 29.484 65.792 65.856z"
+                          />
+                          <path fill="#FFF" d="M97.346 47.678H77.091v15.055h20.022v6.832H77.091v18.213h20.12v6.648H70.603V41.4h26.743zM38.351 88.148h20.255V69.77H38.584v-6.648h20.022V48.047h-20.12V41.4h26.609v53.026H38.35z"
+                          />
+                        </g>
+                      </svg>
+                    </figure>
+                  </div>
+                  <div class="column is-three-quarters content">
+                    <h1 id="challenge" class="title"></h1>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script>
+  particlesJS("hero", {
+    "particles": {
+      "number": {
+        "value": 100,
+        "density": {
+          "enable": true,
+          "value_area": 1000
+        }
+      },
+      "color": {
+        "value": ["#0a2239", "#6c7a88", "#ef3340"]
+      },
+
+      "shape": {
+        "type": "circle",
+        "stroke": {
+          "width": 0,
+          "color": "#fff"
+        },
+        "polygon": {
+          "nb_sides": 5
+        },
+      },
+      "opacity": {
+        "value": 0.6,
+        "random": false,
+        "anim": {
+          "enable": false,
+          "speed": 1,
+          "opacity_min": 0.1,
+          "sync": false
+        }
+      },
+      "size": {
+        "value": 2,
+        "random": true,
+        "anim": {
+          "enable": false,
+          "speed": 40,
+          "size_min": 0.1,
+          "sync": false
+        }
+      },
+      "line_linked": {
+        "enable": true,
+        "distance": 120,
+        "color": "#0a2239",
+        "opacity": 0.4,
+        "width": 1
+      },
+    },
+    "interactivity": {
+      "detect_on": "canvas",
+      "events": {
+        "onhover": {
+          "enable": true,
+          "mode": "grab"
+        },
+        "resize": true
+      },
+      "modes": {
+        "grab": {
+          "distance": 140,
+          "line_linked": {
+            "opacity": 1
+          }
+        },
+        "bubble": {
+          "distance": 400,
+          "size": 40,
+          "duration": 2,
+          "opacity": 8,
+          "speed": 3
+        },
+        "repulse": {
+          "distance": 200,
+          "duration": 0.4
+        },
+        "push": {
+          "particles_nb": 4
+        },
+        "remove": {
+          "particles_nb": 2
+        }
+      }
+    },
+    "retina_detect": true
+  });
+
+
+
+  var challengeBuilder = {
+    key: "challenge",
+    index: 0,
+    expires: /*(24 * 60 * 60)*/2,
+    challenge: "",
+    store: function () {
+      var now = Date.now();
+      var schedule = now + this.expires * 1000;
+      var data = { value: this.index, expires: schedule };
+      localStorage.setItem(this.key, JSON.stringify(data));
+    },
+    check: function () {
+      var now = Date.now();
+      var data = localStorage.getItem(this.key);
+      data = JSON.parse(data);
+
+      if (data !== null) {
+        var expires = data.expires;
+        this.index = data.value;
+        //if (data.expires >= now) {
+        return this.removeStorage();
+        //}
+      }
+      else {
+        return this.store(this.index);
+      }
+    },
+    removeStorage: function () {
+      localStorage.removeItem(this.key);
+      this.index++;
+      return this.store();
+    },
+    get: function () {
+      this.check();
+      this.challenge = challenges[this.index];
+      console.log(this.index);
+      return this;
+    },
+    builder: function () {
+      var title = document.getElementById("challenge").innerHTML = this.challenge.challenge;
+    }
+  };
+
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    challengeBuilder.get().builder();
+    var d = new Date();
+    var curr_date = d.getDate();
+    var curr_month = d.getMonth() + 1; 
+    var curr_year = d.getFullYear();
+    document.getElementById("date").innerHTML = curr_date + "-" + curr_month + "-" + curr_year;
+  });
+</script>
+
+</html>

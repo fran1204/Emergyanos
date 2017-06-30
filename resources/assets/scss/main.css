@@ -1,0 +1,32 @@
+.is-emergya {
+  background: url("/resources/assets/images/img-approach@3x.png") no-repeat center center fixed;
+  background-size: cover;
+  background-color: #faf8f4; }
+
+.image.is-circle img {
+  border-radius: 50%; }
+
+.hero .hero-body h1 {
+  color: #f1f3f1; }
+.hero .hero-body .container {
+  z-index: 1; }
+  .hero .hero-body .container .box {
+    padding: 48px 38px;
+    background-color: #0a2239;
+    color: #f1f3f1; }
+    .hero .hero-body .container .box .task {
+      padding-bottom: 40px;
+      padding-left: 30px; }
+    .hero .hero-body .container .box .content {
+      display: flex; }
+    .hero .hero-body .container .box .content h1 {
+      display: flex;
+      align-content: center;
+      align-items: center; }
+.hero canvas.particles-js-canvas-el {
+  position: absolute; }
+
+.logo {
+  fill: #ef3340; }
+
+/*# sourceMappingURL=main.css.map */
