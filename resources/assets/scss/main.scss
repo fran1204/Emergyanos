@@ -1,7 +1,7 @@
 @import "variables";
 
 .is-emergya {
-    background: url("/resources/assets/images/img-approach@3x.png") no-repeat center center fixed;
+    background: url("/resources/assets/images/img-approach@3x_old.png") no-repeat center center fixed;
     background-size: cover;
     background-color: $cream;
 }
@@ -26,6 +26,16 @@
                 .task {
                     padding-bottom: 40px;
                     padding-left: 30px;
+
+                    #date {
+                        padding-left: 20px;
+
+                        &::before {
+                            content: '';
+                            border-left: 3px solid $red;
+                            margin-right: 20px;
+                        }
+                    }
                 }
                 .content {
                     display: flex;

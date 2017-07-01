@@ -1,5 +1,5 @@
 .is-emergya {
-  background: url("/resources/assets/images/img-approach@3x.png") no-repeat center center fixed;
+  background: url("/resources/assets/images/img-approach@3x_old.png") no-repeat center center fixed;
   background-size: cover;
   background-color: #faf8f4; }
 
@@ -17,6 +17,12 @@
     .hero .hero-body .container .box .task {
       padding-bottom: 40px;
       padding-left: 30px; }
+      .hero .hero-body .container .box .task #date {
+        padding-left: 20px; }
+        .hero .hero-body .container .box .task #date::before {
+          content: '';
+          border-left: 3px solid #ef3340;
+          margin-right: 20px; }
     .hero .hero-body .container .box .content {
       display: flex; }
     .hero .hero-body .container .box .content h1 {
