@@ -159,9 +159,9 @@
       if (data !== null) {
         var expires = data.expires;
         this.index = data.value;
-        //if (data.expires >= now) {
-        return this.removeStorage();
-        //}
+        if (data.expires >= now) {
+          return this.removeStorage();
+        }
       }
       else {
         return this.store(this.index);
@@ -175,7 +175,6 @@
     get: function () {
       this.check();
       this.challenge = challenges[this.index];
-      console.log(this.index);
       return this;
     },
     builder: function () {
