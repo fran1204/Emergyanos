@@ -12,7 +12,7 @@
 
 .hero {
     .hero-body {
-        h1 {
+        h1, h2 {
             color: $lighter-grey;
         }
         .container  {
@@ -27,6 +27,10 @@
                     padding-bottom: 40px;
                     padding-left: 30px;
 
+                    .title {
+                        display: inline;
+                    }
+
                     #date {
                         padding-left: 20px;
 
@@ -39,12 +43,22 @@
                 }
                 .content {
                     display: flex;
-                }
 
-                .content h1 {
-                    display: flex;
-                    align-content: center;
-                    align-items: center;
+                    #challenge {
+                        -webkit-animation-delay: 1.2s;
+                        -moz-animation-delay: 1.2s;
+                        animation-delay: 1.2s;
+                        -webkit-animation-duration: 2s;
+                        -moz-animation-duration: 2s;
+                        animation-duration: 2s;
+                    }
+
+                     h2 {
+                        display: flex;
+                        align-content: center;
+                        align-items: center;
+                        margin: 0 auto;
+                    }
                 }
             }
         }
@@ -55,11 +69,18 @@
     }
 }
 
-
-
-
-
+/* SVG Logo */
 .logo {
     fill: $red;
 }
 
+/* Typed Cursor */
+.typed-cursor{
+  opacity: 1;
+  -webkit-animation: blink 0.7s infinite;
+}
+@-webkit-keyframes blink{
+  0% { opacity:1; }
+  50% { opacity:0; }
+  100% { opacity:1; }
+}

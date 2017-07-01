@@ -8,6 +8,7 @@
   <title>Emergyanos Felices</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.2/css/bulma.min.css">
   <link rel="stylesheet" href="resources/assets/css/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
   <script type="text/javascript" src="challenges.js"></script>
 </head>
 
@@ -18,13 +19,13 @@
         <div class="container has-text-centered">
           <div class="columns">
             <div class="column">
-              <div class="box">
+              <div class="box animated fadeIn">
                 <div class="columns is-gapless is-multiline">
                   <div class="column task is-11 has-text-left">
-                    <h1 class="title">Tarea de hoy! <span id="date"></span></h1>
+                    <h1 class="title"></h1>
                   </div>
                   <div class="column">
-                    <figure class="image">
+                    <figure class="image animated fadeIn">
                       <svg xmlns="http://www.w3.org/2000/svg" width="136" height="136" viewBox="0 0 136 136">
                         <g class="logo" fill="none" fill-rule="evenodd">
                           <path stroke="#FFF" stroke-width="4" d="M133.64 67.913c0 36.371-29.455 65.856-65.791 65.856S2.056 104.284 2.056 67.913c0-36.372 29.457-65.856 65.793-65.856 36.336 0 65.792 29.484 65.792 65.856z"
@@ -36,7 +37,7 @@
                     </figure>
                   </div>
                   <div class="column is-three-quarters content">
-                    <h1 id="challenge" class="title"></h1>
+                    <h2 id="challenge" class="title animated fadeIn"></h2>
                   </div>
                 </div>
               </div>
@@ -47,6 +48,7 @@
     </section>
   </div>
 </body>
+<script src="resources/assets/js/typed.js"  ></script>
 <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 <script>
   particlesJS("hero", {
@@ -159,9 +161,9 @@
       if (data !== null) {
         var expires = data.expires;
         this.index = data.value;
-        if (data.expires <= now) {
+        //if (data.expires <= now) {
           return this.removeStorage();
-        }
+        //}
       }
       else {
         return this.store();
@@ -185,12 +187,20 @@
 </script>
 <script>
   document.addEventListener("DOMContentLoaded", function() {
-    challengeBuilder.get().builder();
     var d = new Date();
     var curr_date = d.getDate();
     var curr_month = d.getMonth() + 1; 
     var curr_year = d.getFullYear();
-    document.getElementById("date").innerHTML = curr_date + "-" + curr_month + "-" + curr_year;
+
+    var options = {
+      strings: ["Tarea de hoy <span id='date'>" + curr_date + "-" + curr_month + "-" + curr_year + "</span>"],
+      typeSpeed: 40
+    }
+
+    var typed = new Typed(".task .title", options);
+    challengeBuilder.get().builder();
+   
+    //document.getElementById("date").innerHTML = curr_date + "-" + curr_month + "-" + curr_year;
   });
 </script>
 
