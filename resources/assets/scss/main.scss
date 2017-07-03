@@ -1,86 +1,86 @@
 @import "variables";
 
 .is-emergya {
-    background: url("/Emergyanos/resources/assets/images/background.png") no-repeat center center fixed;
-    background-size: cover;
-    background-color: $cream;
+  background: url("/Emergyanos/resources/assets/images/background.png") no-repeat center center fixed;
+  background-size: cover;
+  background-color: $cream;
 }
 
 .image.is-circle img {
-    border-radius: 50%;
+  border-radius: 50%;
 }
 
 .hero {
-    .hero-body {
-        h1, h2 {
-            color: $lighter-grey;
-        }
-        .container  {
-            z-index: 1;
+  .hero-body {
+    h1, h2 {
+      color: $lighter-grey;
+    }
+    .container {
+      z-index: 1;
 
-            .box {
-                padding: 48px 38px;
-                background-color: $dark-blue;
-                color: $lighter-grey;
-
-                .task {
-                    padding-bottom: 40px;
-                    padding-left: 30px;
-
-                    .title {
-                        display: inline;
-                    }
-
-                    #date {
-                        padding-left: 20px;
-
-                        &::before {
-                            content: '';
-                            border-left: 3px solid $red;
-                            margin-right: 20px;
-                        }
-                    }
-                }
-                .content {
-                    display: flex;
-
-                    #challenge {
-                        -webkit-animation-delay: 1.2s;
-                        -moz-animation-delay: 1.2s;
-                        animation-delay: 1.2s;
-                        -webkit-animation-duration: 2s;
-                        -moz-animation-duration: 2s;
-                        animation-duration: 2s;
-                    }
-
-                     h2 {
-                        display: flex;
-                        align-content: center;
-                        align-items: center;
-                        margin: 0 auto;
-                    }
-                }
+      .box {
+        padding: 48px 38px;
+        background-color: $dark-blue;
+        color: $lighter-grey;
+        .task {
+          padding-bottom: 40px;
+          padding-left: 30px;
+          .title {
+            display: inline;
+          }
+          #date {
+            padding-left: 20px;
+            &::before {
+              content: '';
+              border-left: 3px solid $red;
+              margin-right: 20px;
             }
+          }
         }
+        .content {
+          display: flex;
+          #challenge {
+            -webkit-animation-delay: 1.2s;
+            -moz-animation-delay: 1.2s;
+            animation-delay: 1.2s;
+            -webkit-animation-duration: 2s;
+            -moz-animation-duration: 2s;
+            animation-duration: 2s;
+          }
+          h2 {
+            display: flex;
+            align-content: center;
+            align-items: center;
+            margin: 0 auto;
+          }
+        }
+      }
     }
-
-    canvas.particles-js-canvas-el {
-        position: absolute;
-    }
+  }
+  canvas.particles-js-canvas-el {
+    position: absolute;
+  }
 }
 
 /* SVG Logo */
 .logo {
-    fill: $red;
+  fill: $red;
 }
 
 /* Typed Cursor */
-.typed-cursor{
+.typed-cursor {
   opacity: 1;
   -webkit-animation: blink 0.7s infinite;
 }
-@-webkit-keyframes blink{
-  0% { opacity:1; }
-  50% { opacity:0; }
-  100% { opacity:1; }
+
+@-webkit-keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
