@@ -145,7 +145,7 @@
   var challengeBuilder = {
     key: "challenge",
     index: 0,
-    expires: /*(24 * 60 * 60)*/(5*60),
+    expires: (24 * 60 * 60),
     challenge: "",
     store: function () {
       var now = Date.now();
@@ -161,9 +161,9 @@
       if (data !== null) {
         var expires = data.expires;
         this.index = data.value;
-        //if (data.expires <= now) {
+        if (data.expires <= now) {
           return this.removeStorage();
-        //}
+        }
       }
       else {
         return this.store();
