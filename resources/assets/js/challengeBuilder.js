@@ -31,7 +31,17 @@ var challengeBuilder = {
     return this.store();
   },
   get: function () {
-    this.check();
+    //this.check();
+
+    challenges.forEach(function(element, index) {
+      var today = moment().format("YYYY-MM-DD");
+      var element_date = moment(element.date, "DD/MM/YYYY").format("YYYY-MM-DD");
+
+      if (moment(today).isSame(element_date)) {
+        this.index = index;
+      }
+    }, this);
+
     this.challenge = challenges[this.index];
     return this;
   },
