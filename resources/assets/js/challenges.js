@@ -51,7 +51,7 @@ var challenges = [
   },
   {
     "day": 11,
-    "challenge": "Divierte y aprende SEO con la presentación de Bea, nuestra compañera de Digital  https://docs.google.com/presentation/d/1YTnIO6hxZIStd1B62uR4-cze41nhnsKFKhlRcgCRhLs/edit?usp=gmail",
+    "challenge": "Diviértete y aprende SEO con la presentación de Bea, nuestra compañera de Digital  https://docs.google.com/presentation/d/1YTnIO6hxZIStd1B62uR4-cze41nhnsKFKhlRcgCRhLs/edit?usp=gmail",
     "date": "17/07/2017"
   },
   {
