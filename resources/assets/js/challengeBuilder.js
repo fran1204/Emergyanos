@@ -1,21 +1,22 @@
 var challengeBuilder = {
-  key: "challenge",
   index: 0,
-  challenge: "",
-  get: function () {
-    challenges.forEach(function(element, index) {
-      var today = moment().format("YYYY-MM-DD");
-      var element_date = moment(element.date, "DD/MM/YYYY").format("YYYY-MM-DD");
+  challenge: 0,
+  init: function () {
+    var today = moment().format("YYYY-MM-DD");
 
-      if (moment(today).isSame(element_date)) {
-        this.index = index;
+    challenges.some(function(element, index) {
+      var task_date = moment(element.date, "DD/MM/YYYY").format("YYYY-MM-DD");
+
+      if (moment(today).isSame(task_date)) {
+        this.challenge = challenges[index];
+        return true;
       }
     }, this);
 
-    this.challenge = challenges[this.index];
-    return this;
+    var title = (this.challenge !== 0) ? this.challenge.challenge : "Hoy toca descansar";
+    this.build(title);
   },
-  builder: function () {
-    var title = document.getElementById("challenge").innerHTML = this.challenge.challenge;
+  build: function (title) {
+    document.getElementById("challenge").innerHTML = title;
   }
 };

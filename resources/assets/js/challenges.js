@@ -1,3 +1,6 @@
+/**
+ * Que haces aquí eh? Que ganitas tenemos de ser felices, impaciente!
+ */
 var challenges = [
   {
     "day": 1,
@@ -240,3 +243,4 @@ var challenges = [
     "date": "07/09/2017"
   }
 ]
+// Hasta el último me has cotilleao!

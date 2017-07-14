@@ -73,30 +73,19 @@
 
  ga('create', 'UA-101941712-1', 'auto');
  ga('send', 'pageview');
-
 </script>
 <script>
   document.addEventListener("DOMContentLoaded", function() {
     // Init particles.js background.
     particlesJS("hero", particlesConfig);
-
-    // Get current date
-    var d = new Date();
-    var curr_date = d.getDate();
-    var curr_month = d.getMonth() + 1;
-    var curr_year = d.getFullYear();
-
     // Options for typed.js
     var options = {
-      // TODO: Fix month in the right way. May add moment.js
-      strings: ["Tarea de hoy <span id='date'>" + curr_date + "- 0" + curr_month + "-" + curr_year + "</span>"],
+      strings: ["Tarea de hoy <span id='date'>" + moment().format("DD-MM-YYYY") + "</span>"],
       typeSpeed: 40
     }
-
     var typed = new Typed(".task .title", options);
-
     // Init the builder
-    challengeBuilder.get().builder();
+    challengeBuilder.init();
   });
 </script>
 </html>
