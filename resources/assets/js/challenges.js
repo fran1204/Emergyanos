@@ -241,6 +241,11 @@ var challenges = [
     "day": 48,
     "challenge": "Busca a un compañero de otra tecnología o equipo y dale un beso (si es en la boca tiene más puntos)",
     "date": "07/09/2017"
+  },
+  {
+    "day": 49,
+    "challenge": "Ven sin peinar mañana",
+    "date": "08/09/2017"
   }
 ]
 // Hasta el último me has cotilleao!
