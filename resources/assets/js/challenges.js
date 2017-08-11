@@ -154,7 +154,7 @@ var challenges = [
   },
   {
     "day": 31,
-    "challenge": "Finge que es tu cumpleaños y que has dejado una tarta en la cocina.",
+    "challenge": "Encuentra a alguien en la oficina y haceros una foto",
     "date": "14/08/2017"
   },
   {
