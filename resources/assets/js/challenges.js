@@ -246,6 +246,11 @@ var challenges = [
     "day": 49,
     "challenge": "Ven sin peinar mañana",
     "date": "08/09/2017"
+  },
+  {
+    "day": 50,
+    "challenge": "Lee la Sin Razón",
+    "date": "06/10/2017"
   }
 ]
-// Hasta el último me has cotilleao!
+// :D :D
