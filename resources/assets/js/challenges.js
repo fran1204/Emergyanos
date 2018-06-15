@@ -251,6 +251,11 @@ var challenges = [
     "day": 50,
     "challenge": "Lee la Sin Razón",
     "date": "06/10/2017"
+  },
+  {
+    "day": 51,
+    "challenge": "Vete al Mercadona y compra palomitas para los compañeros",
+    "date": "15/06/2018"
   }
 ]
 // :D :D
