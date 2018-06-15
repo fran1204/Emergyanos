@@ -254,7 +254,7 @@ var challenges = [
   },
   {
     "day": 51,
-    "challenge": "Vete al Mercadona y compra palomitas para los compañeros",
+    "challenge": "Compra palomitas para los compañeros!!",
     "date": "15/06/2018"
   }
 ]
